@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PipeLaunchOptions
+ PipePath="docker"
+ PipeArguments="exec -i debug_debug_1 /clrdbg/clrdbg --interpreter=mi"
+ TargetArchitecture="x64" MIMode="clrdbg"
+ ExePath="dotnet" WorkingDirectory="/app"
+ ExeArguments="/app/bin/Debug/netcoreapp2.0/ExampleApp.dll">
+</PipeLaunchOptions>
