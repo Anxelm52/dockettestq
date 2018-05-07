@@ -1,0 +1,28 @@
+version: "3"
+
+volumes:
+  productdata:
+  
+networks:
+  backend:
+  
+services:
+
+  mvc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/obj
+      - /app/bin
+      - ~/.nuget:/root/.nuget
+      - /root/.nuget/packages/.tools
+    ports:
+      - 3000:80
+    networks:
+      - backend
+    environment:
+      - DBHOST=mysql
+      - WAITHOST=mysql
+      - bind-address=0.0.0.0
