@@ -1,9 +1,0 @@
-FROM alpine:3.4
-
-VOLUME /data
-
-WORKDIR /datoa
-
-ENTRYPOINT (test -e message.txt && echo "File Exists" \
- || (echo "Creating File..." \
- && echo Hello, Docker $(date '+%X') > message.txt)) && cat message.txt
